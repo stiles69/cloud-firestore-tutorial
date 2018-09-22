@@ -8,14 +8,17 @@
         Add Reptile
       </button>
     </div>
-    <ul class="reptileList">
+    <div id="onereptileList">
+      <h1>{{ reptile.name }}</h1>
+    </div>
+    <!-- <ul class="reptileList">
       <li v-for="reptile in reptiles" >
         {{ reptile.name }} -
         <button @click="deleteReptile(reptile)">
           Remove
         </button>
       </li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 
@@ -32,7 +35,7 @@
     },
     firestore() {
       return {
-        reptiles: db.collection('reptiles'),
+        reptiles: db.collection('reptiles').doc('title'),
       }
     },
     methods: {
