@@ -1,24 +1,9 @@
 <template>
   <div id="app">
-    <div>
-      <input type="text"
-        v-model="newReptile"
-        @keyup.enter="addReptile">
-      <button  @click="addReptile">
-        Add Reptile
-      </button>
-    </div>
     <div id="onereptileList">
-      <h1>{{ reptile.name }}</h1>
-    </div>
-    <!-- <ul class="reptileList">
-      <li v-for="reptile in reptiles" >
-        {{ reptile.name }} -
-        <button @click="deleteReptile(reptile)">
-          Remove
-        </button>
-      </li>
-    </ul> -->
+      <h1>{{ hometowncab.companyname }}</h1>
+      <h1>{{ hometowncab.companyslogan }}</h1>
+    </div>    
   </div>
 </template>
 
@@ -29,13 +14,13 @@
     name: 'app',
     data() {
       return {
-        reptiles: [],
+        hometowncab: [],
         newReptile: ''
       }
     },
     firestore() {
       return {
-        reptiles: db.collection('reptiles').doc('title'),
+        hometowncab: db.collection('hometowncab').doc('constants'),
       }
     },
     methods: {
